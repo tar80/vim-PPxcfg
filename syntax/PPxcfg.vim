@@ -40,14 +40,14 @@ syn match CfgOption   +"+
 syn match CfgOption   "%"
 syn match CfgOption   "%[a-zA-Z@\!#\$~]\S*"
 syn region String     matchgroup=Identifier start=+%k[A-Z-]\{-\}"+ end=+"+ end=+%:+ end=+%&+ end=+$+ keepend
-syn region String     matchgroup=Identifier start=+%j"+ skip=+""+ end=+"+ keepend
+syn region String     matchgroup=Identifier start=+%j"+ skip=+""+ end=+"+ keepend contains=CfgPath
 syn case match
-syn region String     matchgroup=Identifier start=+%[IGQ]"+ end=+"+ keepend
+syn region String     matchgroup=Identifier start=+%[IGQ]"+ end=+"+ keepend contains=CfgPath
 syn region String     matchgroup=Identifier start=+%"+ skip=+""+ end=+"+ keepend
-syn region ErrorMsg   matchgroup=Identifier start=+%s[iopeu]"+ end=+"+ keepend
-syn region ErrorMsg   matchgroup=Identifier start="%s[iopeu]'" end="'" keepend
-syn region ErrorMsg   matchgroup=Identifier start="%g'" end="'" keepend
-syn region ErrorMsg   matchgroup=Identifier start="%'" skip="%'" end="'" keepend
+syn region Statement  matchgroup=Identifier start=+%s[iopeu]"+ end=+"+ keepend
+syn region Statement  matchgroup=Identifier start="%s[iopeu]'" end="'" keepend
+syn region Statement  matchgroup=Identifier start="%g'" end="'" keepend
+syn region Statement  matchgroup=Identifier start="%'" skip="%'" end="'" keepend
 syn match CfgOption   +%S"+
 syn match CfgOption   "%[0-9\\]"
 syn match CfgOption   "%|"
